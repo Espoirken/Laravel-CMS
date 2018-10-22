@@ -13,7 +13,7 @@ class UsersTableSeeder extends Seeder
     {
         $user = App\User::create([
             'name' => 'Admin',
-            'email' => 'hi@gmail.com',
+            'email' => 'admin@gmail.com',
             'password' => bcrypt('password'),
             'admin' => 1
         ]);
@@ -22,8 +22,8 @@ class UsersTableSeeder extends Seeder
             'user_id' => $user->id,
             'avatar' => 'uploads/avatars/1.jpeg',
             'about' => 'Lorem ipsum expedita.',
-            'https://www.facebook.com/' => 'facebook.com',
-            'https://www.youtube.com/' => 'youtube.com',
+            'facebook' => 'https://www.facebook.com/',
+            'youtube' => 'https://www.youtube.com/',
         ]);
 
 

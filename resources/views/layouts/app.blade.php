@@ -100,6 +100,9 @@
                                 <li class="list-group-item"><a href="{{ route('post.trashed') }}">Trashed Posts</a></li>
                                 <li class="list-group-item"><a href="{{ route('category.create') }}">Create new category</a></li>
                                 <li class="list-group-item"><a href="{{ route('posts.create') }}">Create new post</a></li>
+                                @if (Auth::user()->admin)
+                                <li class="list-group-item"><a href="{{ route('settings') }}">Settings</a></li>
+                                @endif
                             </ul>
                         </div>
                         @endif

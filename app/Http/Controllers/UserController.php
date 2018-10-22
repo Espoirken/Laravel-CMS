@@ -21,7 +21,7 @@ class UserController extends Controller
     
     public function index()
     {
-        return view('users.index')->with('users', User::all());
+        return view('admin.users.index')->with('users', User::all());
     }
 
     /**
@@ -31,7 +31,8 @@ class UserController extends Controller
      */
     public function create()
     {
-        return view('users.create');
+        
+        return view('admin.users.create');
     }
 
     /**
@@ -44,7 +45,7 @@ class UserController extends Controller
     {
         $this->validate($request,[
             'name' => 'required',
-            'email' => 'required|email',
+            'email' => 'required|email|unique:users',
         ]);
 
         $user = User::create([
@@ -57,7 +58,7 @@ class UserController extends Controller
             'user_id' => $user->id,
             'avatar' => 'uploads/avatars/1.jpeg',
         ]);
-
+           
         toastr()->success('The user added successfully!');
         return redirect()->route('users');
     }

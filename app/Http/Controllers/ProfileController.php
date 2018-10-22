@@ -15,7 +15,7 @@ class ProfileController extends Controller
      */
     public function index()
     {
-        return view('users.profile')->with('user', Auth::user());
+        return view('admin.users.profile')->with('user', Auth::user());
     }
 
     /**
@@ -86,7 +86,7 @@ class ProfileController extends Controller
 
             $avatar->move('uploads/avatars', $avatar_new_name);
 
-            $user->profile->avatar = 'uploads/avatars'.$avatar_new_name;
+            $user->profile->avatar = 'uploads/avatars/'.$avatar_new_name;
 
             $user->profile->save();
         }

@@ -179,5 +179,15 @@ Route::get('/users/delete/{id}', [
     'as' => 'users.delete',
 ]);
 
+Route::get('/settings', [
+    'uses' => 'SettingController@index',
+    'as' => 'settings',
+]);
+
+Route::post('/settings/update', [
+    'uses' => 'SettingController@update',
+    'as' => 'settings.update',
+]);
+
 
 });

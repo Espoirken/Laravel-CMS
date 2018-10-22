@@ -16,7 +16,7 @@ class PostController extends Controller
      */
     public function index()
     {
-        return view('posts.index')->with('posts', Post::all());
+        return view('admin.posts.index')->with('posts', Post::all());
     }
 
     /**
@@ -33,7 +33,7 @@ class PostController extends Controller
             toastr()->info('Please create a category or tags first ');
             return redirect()->back();
         }
-        return view('posts.create')->with('categories', $categories)->with('tags', $tags);
+        return view('admin.posts.create')->with('categories', $categories)->with('tags', $tags);
     }
 
     /**
@@ -90,7 +90,7 @@ class PostController extends Controller
     public function edit($id)
     {
         $posts = Post::find($id);
-        return view('posts.edit')->with('posts' ,$posts)->with('categories', Category::all())->with('tags', Tag::all());
+        return view('admin.posts.edit')->with('posts' ,$posts)->with('categories', Category::all())->with('tags', Tag::all());
     }
 
     /**
@@ -143,7 +143,7 @@ class PostController extends Controller
 
     public function trashed(){
         $posts = Post::onlyTrashed()->get();
-        return view('posts.trashed')->with('posts', $posts);
+        return view('admin.posts.trashed')->with('posts', $posts);
     }
 
     public function kill($id){

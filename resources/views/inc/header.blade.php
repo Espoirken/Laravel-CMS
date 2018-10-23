@@ -19,7 +19,7 @@
                     </a>
                     <ul class="primary-menu-menu" style="overflow: hidden;">
                         @foreach ($categories as $category)
-                            <li>{{ $category->name}}</li>
+                            <li><a href="{{ route('category.single', ['id' => $category->id])}}">{{ $category->name}}</a></li>
                         @endforeach
                     </ul>
                 </nav>

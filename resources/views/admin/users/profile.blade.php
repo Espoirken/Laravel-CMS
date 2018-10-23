@@ -35,7 +35,7 @@
                 </div>
                 <div class="form-group">
                     <label for="about">About</label>
-                    <textarea name="about" id="about" cols="4" rows="4" class="form-control">{{$user->profile->about}}"</textarea>
+                    <textarea name="about" id="about" cols="4" rows="4" class="form-control">{{$user->profile->about}}</textarea>
                 </div>
                 <div class="form-group">
                     <div class="text-center">

@@ -11,7 +11,7 @@
     <hr>
 @endif
 
-    <div class="card" style="width:65%;">
+    <div class="card">
         <div class="card-body">
             <div class="card-title"><h2>Create a new post</h2></div>
             <hr>
@@ -56,9 +56,6 @@
     
 @endsection
 
-@section('styles')
-
-@endsection
 @section('scripts')
 
 

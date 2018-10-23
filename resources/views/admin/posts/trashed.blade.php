@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="card" style="height: 20%;">
+<div class="card">
     <div class="card-header bg-transparent text-center"><h2>Trashed Posts</h2></div>
 </div>
 <table class="table table-hover table-md" style="width:100%">

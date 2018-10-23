@@ -12,10 +12,10 @@ class SettingsTableSeeder extends Seeder
     public function run()
     {
         \App\Setting::create([
-            'site_name' => "Laravel's Blog",
-            'contact_number' => "34515",
-            'contact_email' => "settings@gmail.com",
-            'address' => "NewYork",
+            'site_name' => "Espoirken",
+            'contact_number' => "09663616476",
+            'contact_email' => "gilbertcaburnay@gmail.com",
+            'address' => "150 Nepa Corner Paulino Street",
         ]);
     }
 }

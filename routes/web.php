@@ -11,27 +11,34 @@
 |
 */
 
-Route::post('/subscribe', function(){
-    $email = request('email');
-
-    Newsletter::subscribe($email);
-    toastr()->success('The user successfully subscribed!');
-    return redirect()->back();
-});
-
+Route::post('/subscribe',[
+    'uses' => 'EmailController@subscribe',
+    'as' => 'subscribe',
+]);
 
 Route::get('/',[
     'uses' => 'FrontEndController@index',
     'as' => 'index',
 ]);
 
+Route::get('/admin/home', function(){
+    return redirect('/admin/dashboard');
+});
+
 Route::get('/results', function(){
+    if (App\Post::first()) {    
     $posts = App\Post::where('title', 'like', '%' . request('query') . '%')->get();
     return view('results')->with('posts', $posts)
                         ->with('title', 'Search results :' . request('query'))
                         ->with('settings', \App\Setting::first())
                         ->with('categories', \App\Category::take(5)->get())
                         ->with('query', request('query'));
+    }
+    else{
+        toastr()->error('No results found!');
+        return redirect('/');
+    }
+    
 });
 
 Route::get('/post/{slug}',[
@@ -56,7 +63,7 @@ Auth::routes();
 
 Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function(){
     
-    Route::get('/home', [
+    Route::get('/dashboard', [
         'uses' => 'HomeController@index',
         'as' => 'home'
     ]);

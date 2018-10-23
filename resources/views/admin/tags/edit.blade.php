@@ -3,7 +3,7 @@
 @section('content')
 @include('admin.inc.messages')
 
-    <div class="card" style="width:65%;">
+    <div class="card">
         <div class="card-body">
             <div class="card-title"><h2>Update tag</h2></div>
             <hr>

@@ -3,9 +3,9 @@
 @section('content')
 @include('admin.inc.messages')
 
-    <div class="card" style="width:65%;">
+    <div class="card">
         <div class="card-body">
-            <div class="card-title"><h2>Create a new user</h2></div>
+            <div class="card-title text-center"><h2>Create a new user</h2></div>
             <hr>
             <form action="{{ route('users.store') }}" method="POST">
                 {{ csrf_field() }}

@@ -3,9 +3,9 @@
 @section('content')
 @include('admin.inc.messages')
 
-    <div class="card" style="width:65%;">
+    <div class="card">
         <div class="card-body">
-            <div class="card-title"><h2>Edit blog settings</h2></div>
+            <div class="card-title text-center"><h2>Edit blog settings</h2></div>
             <hr>
             <form action="{{ route('settings.update') }}" method="POST">
                 {{ csrf_field() }}

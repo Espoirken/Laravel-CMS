@@ -22,7 +22,7 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.10/summernote.css">
-    @yield('styles')
+
 </head>
 <body>
     {!! toastr()->render() !!}
@@ -82,10 +82,10 @@
         
         <main class="py-4">
             
-            <div class="container">
+            <div class="container-fluid">
                     <div class="row">
                         @if (Auth::check())
-                        <div class="col-lg-4">
+                        <div class="col-lg-3">
                             <ul class="list-group">
                                 <li class="list-group-item"><a href="{{ route('home') }}">Home</a></li>
                                 <li class="list-group-item"><a href="{{ route('categories') }}">Categories</a></li>
@@ -106,7 +106,7 @@
                             </ul>
                         </div>
                         @endif
-                        <div class="col-lg-8">
+                        <div class="col-lg-9">  
                             @yield('content')
                         </div>
                     </div>

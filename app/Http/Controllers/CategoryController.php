@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Session;
 use Illuminate\Http\Request;
 use App\Category;
+use App\User;
+use App\Setting;
 use TJGazel\Toastr\Facades\Toastr;
 
 class CategoryController extends Controller
@@ -16,7 +18,9 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        return view('admin.category.index')->with('categories', Category::all());
+        return view('admin.category.index')->with('categories', Category::all())
+                                            ->with('user', User::first())
+                                            ->with('settings', Setting::first());
     }
 
     /**
@@ -26,7 +30,8 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        return view('admin.category.create');
+        return view('admin.category.create')->with('user', User::first())
+                                            ->with('settings', Setting::first());
     }
 
     /**

@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Category;
 use App\Post;
 use App\Tag;
+use App\User;
+use App\Setting;
 use Auth;
 
 class PostController extends Controller
@@ -17,7 +19,9 @@ class PostController extends Controller
      */
     public function index()
     {
-        return view('admin.posts.index')->with('posts', Post::all());
+        return view('admin.posts.index')->with('posts', Post::all())
+                                        ->with('user', User::first())
+                                        ->with('settings', Setting::first());
     }
 
     /**
@@ -34,7 +38,9 @@ class PostController extends Controller
             toastr()->info('Please create a category or tags first ');
             return redirect()->back();
         }
-        return view('admin.posts.create')->with('categories', $categories)->with('tags', $tags);
+        return view('admin.posts.create')->with('categories', $categories)->with('tags', $tags)
+                                                                        ->with('user', User::first())
+                                                                        ->with('settings', Setting::first());
     }
 
     /**
@@ -145,7 +151,9 @@ class PostController extends Controller
 
     public function trashed(){
         $posts = Post::onlyTrashed()->get();
-        return view('admin.posts.trashed')->with('posts', $posts);
+        return view('admin.posts.trashed')->with('posts', $posts)
+                                        ->with('user', User::first())
+                                        ->with('settings', Setting::first());
     }
 
     public function kill($id){

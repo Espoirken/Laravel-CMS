@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Setting;
+use App\User;
 use Session;
 
 class SettingController extends Controller
@@ -31,6 +32,7 @@ class SettingController extends Controller
         return redirect()->back();
     }
     public function index(){
-        return view('admin.settings.setting')->with('settings', Setting::first());
+        return view('admin.settings.setting')->with('settings', Setting::first())
+                                            ->with('user', User::first());
     }
 }

@@ -32,7 +32,7 @@ class TagsController extends Controller
      */
     public function create()
     {
-        return view('admin.tags.create')->with('user', User::first())
+        return view('admin.tags.createmodal')->with('user', User::first())
                                         ->with('settings', Setting::first());
         
     }

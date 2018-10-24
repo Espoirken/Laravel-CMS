@@ -81,7 +81,7 @@ Route::post('/posts/store', [
 
 Route::get('/category/create', [
     'uses' => 'CategoryController@create',
-    'as' => 'category.create',
+    'as' => 'category.createmodal',
 ]);
 
 Route::post('/category/store', [
@@ -167,6 +167,11 @@ Route::get('/tags/delete/{id}', [
 Route::get('/tags/create', [
     'uses' => 'TagsController@create',
     'as' => 'tags.create',
+]);
+
+Route::get('/tags/createmodal', [
+    'uses' => 'TagsController@create',
+    'as' => 'tags.createmodal',
 ]);
 
 Route::post('/tags/store', [

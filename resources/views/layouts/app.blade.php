@@ -96,14 +96,14 @@
                         <a class="nav-link dropdown-toggle" href="/" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Categories</a>
                         <div class="dropdown-menu" aria-labelledby="dropdown01">
                             <a class="dropdown-item" href="{{ route('categories') }}">Show all Categories</a>
-                            <a class="dropdown-item" href="{{ route('category.create') }}">Create a new Category</a>
+                            <a class="dropdown-item" href="{{ route('category.createmodal') }}" data-toggle="modal" data-target="#categoryModal">Create a new Category</a>
                         </div>
                     </li>
                     <li class="nav-item dropdown">
                       <a class="nav-link dropdown-toggle" href="/" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Tags</a>
                       <div class="dropdown-menu" aria-labelledby="dropdown01">
                         <a class="dropdown-item" href="{{ route('tags') }}">Show Tags</a>
-                        <a class="dropdown-item" href="{{ route('tags.create') }}">Create a new Tag</a>
+                        <a class="dropdown-item" href="{{ route('tags.createmodal') }}" data-toggle="modal" data-target="#tagsModal">Create a new Tag</a>
                       </div>
                     </li>
                     <li class="nav-item dropdown">
@@ -155,7 +155,9 @@
               <main class="py-4">
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-lg-12">  
+                    <div class="col-lg-12">
+                            @include('admin.category.createmodal')  
+                            @include('admin.tags.createmodal')  
                         @yield('content')
                     </div>
                 </div>

@@ -18,12 +18,18 @@
         @foreach ($users as $user)
         <tr>
             <td><img src="{{ asset($user->profile->avatar) }}" alt="users_profile" width="60px" height="60px" style="border-radius:50%"></td>
-            <td>{{$user->name}}</td>
+            @if(Auth::id() == $user->id)
+                <td><b>{{$user->name}}</b></td>
+            @else
+                <td>{{$user->name}}</td>
+            @endif
             <td>
+                @if(Auth::id() !== $user->id)
                 @if($user->admin)
-                    <a href="{{ route('users.notadmin', ['id' => $user->id]) }}" class="btn btn-sm btn-danger">Remove permissions</a>
+                    <a href="{{ route('users.notadmin', ['id' => $user->id]) }}" class="btn btn-sm btn-danger" style="width:140px">Remove permissions</a>
                 @else
-                    <a href="{{ route('users.admin', ['id' => $user->id]) }}" class="btn btn-sm btn-success">Make admin</a>
+                    <a href="{{ route('users.admin', ['id' => $user->id]) }}" class="btn btn-sm btn-success" style="width:140px">Make admin</a>
+                @endif
                 @endif
             </td>
             <td>

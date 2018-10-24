@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User;
 use App\Profile;
+use App\Setting;
 use Session;
 
 class UserController extends Controller
@@ -21,7 +22,8 @@ class UserController extends Controller
     
     public function index()
     {
-        return view('admin.users.index')->with('users', User::all());
+        return view('admin.users.index')->with('users', User::all())
+                                        ->with('settings', Setting::first());
     }
 
     /**
@@ -32,7 +34,8 @@ class UserController extends Controller
     public function create()
     {
         
-        return view('admin.users.create');
+        return view('admin.users.create')->with('settings', Setting::first())
+                                        ->with('user', User::first());
     }
 
     /**
@@ -51,7 +54,7 @@ class UserController extends Controller
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
-            'password' => bcrypt('password'),
+            'password' => bcrypt('123123'),
         ]);
 
         $profile = Profile::create([

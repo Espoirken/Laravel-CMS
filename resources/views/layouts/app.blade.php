@@ -118,15 +118,16 @@
                     <li class="nav-item dropdown">
                       <a class="nav-link dropdown-toggle" href="/" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Users</a>
                       <div class="dropdown-menu" aria-labelledby="dropdown01">
-                        <a class="dropdown-item" href="{{ route('posts') }}">Show All Users</a>
-                        <a class="dropdown-item" href="{{ route('posts.create') }}">Create a new User</a>
+                        <a class="dropdown-item" href="{{ route('users') }}">Show All Users</a>
+                        <a class="dropdown-item" href="{{ route('users.create') }}">Create a new User</a>
                       </div>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('settings') }}">Settings</a>
                     </li>
+                    @endif
                     </ul>
-                    <ul class="navbar-nav ml-auto text-center">
+                    <ul class="navbar-nav ml-auto">
                     <li class="nav-item dropdown">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                 {{ Auth::user()->name }} <span class="caret"></span>
@@ -145,7 +146,7 @@
                             </div>
                         </li>
                     </ul>
-                    @endif
+                    
                   
                 </div>
                 

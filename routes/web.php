@@ -32,7 +32,8 @@ Route::get('/results', function(){
                         ->with('title', 'Search results :' . request('query'))
                         ->with('settings', \App\Setting::first())
                         ->with('categories', \App\Category::take(5)->get())
-                        ->with('query', request('query'));
+                        ->with('query', request('query'))
+                        ->with('user', App\User::first());
     }
     else{
         toastr()->error('No results found!');

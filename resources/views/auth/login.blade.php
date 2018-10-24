@@ -1,7 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
-            <div class="card offset-lg-3" style="width:80%">
+<div class="container">
+    <div class="col-lg-8 offset-lg-2">
+            <div class="card" >
                 <div class="card-header">{{ __('Login') }}</div>
 
                 <div class="card-body">
@@ -62,4 +64,6 @@
                     </form>
                 </div>
             </div>
+    </div>
+</div>
 @endsection

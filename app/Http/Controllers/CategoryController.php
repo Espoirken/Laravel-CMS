@@ -30,7 +30,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        return view('admin.category.create')->with('user', User::first())
+        return view('admin.category.createmodal')->with('user', User::first())
                                             ->with('settings', Setting::first());
     }
 

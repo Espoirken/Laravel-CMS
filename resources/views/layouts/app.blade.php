@@ -25,7 +25,7 @@
 
 </head>
 <body>
-    {!! toastr()->render() !!}
+    {{-- {!! toastr()->render() !!} --}}
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
             <div class="container">

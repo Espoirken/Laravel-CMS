@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-@include('admin.inc.messages')
+@include('inc.messages')
 
     <div class="card">
         <div class="card-body">
